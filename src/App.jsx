@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from "./pages/Login"
+import Login from "./pages/Login";
 import ErrorAlert from './components/ErrorAlert';
-// import Home from "./pages/Home"
+import Note from './pages/Note';
+// import Signup from './pages/Signup';
 
 
 const App = () => {
@@ -9,8 +10,10 @@ const App = () => {
 
      <Router>
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
-        <Route path="/" element={<Login />} />
+        
+        <Route path="/" element={<Note />} />
+        <Route path="/note" element={<Login />} />
+        <Route path="/ login" element={<Signup />} />
         <Route path='/ErrorAlert' element={<ErrorAlert/>}/>
       </Routes>
     </Router>

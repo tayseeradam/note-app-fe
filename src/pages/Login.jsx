@@ -84,13 +84,14 @@ if (data.ok){
          className="  w-full mb-4 text-white p-2 rounded-lg border border-slate-300 px-4 py-3
          outline-none focus:border-gray-400 transition-all duration-700 font-medium"/>
 
-         <input type="password" 
+         <input
+          type="password" 
          placeholder="Password" 
          required
          value={password}
          onChange={e => setPassword(e.target.value)}
-         className="w-full mb-4  p-2 rounded-lg border
-          border-slate-300 px-4 py-3 outline-none text-white focus:border-gray-400 transition-all duration-700  font-medium"/>
+         className="w-full mb-4  p-2 rounded-lg border border-slate-300 px-4 py-3 
+         outline-none text-white focus:border-gray-400 transition-all duration-700 font-medium"/>
         
         <button
         type='submit'
@@ -109,7 +110,7 @@ if (data.ok){
               type='button'
               className=' text-white/60 hover:text-white transition-colors inline-flex items-center gap-2'
             >
-              Don t have an account? Sign up
+              Don't have an account? Sign up
               <ArrowRight size={16} />
             </Link>
           </div>
