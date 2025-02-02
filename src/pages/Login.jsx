@@ -67,11 +67,13 @@ if (data.ok){
        <form
         onSubmit={handleSubmit}
 
-       className="bg-slate-700 p-6 rounded-xl  border border-slate-300 transition-all">
+       className="bg-slate-700 p-6 rounded-xl  border border-slate-300 
+       transition-all">
 
           {error && (
             <ErrorAlert
-              className='mb-6 p-4 bg-error/10 text-error rounded-lg border border-error/50 flex items-center gap-3'
+              className='mb-6 p-4 bg-error/10 text-error rounded-lg border
+               border-error/50 flex items-center gap-3'
               message={error}
             />
           )}

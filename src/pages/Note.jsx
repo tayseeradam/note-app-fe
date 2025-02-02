@@ -1,7 +1,7 @@
 
 const Note = () => {
   return (
-    <div className="bg-black">
+    <div className="bg-white">
    <main className="h-screen max-w-md  md:items-center md:justify-center md:flex md:flex-col w-full mx-auto ">
     <div className=" px-4 py-2 bg-slate-800 flex md:flex-col gap-4 rounded-lg ">
 
