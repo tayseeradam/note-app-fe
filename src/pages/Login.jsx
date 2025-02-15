@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Navigate, Link } from 'react-router-dom';
 import { ArrowRight, Loader2 } from 'lucide-react';
-// import toast from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import ErrorAlert from '../components/ErrorAlert';
 
 
@@ -29,6 +29,7 @@ const handleSubmit = async e => {
   setError('');
 
 try {
+  isLoading(true)
   const response = await fetch(`${apiUrl} /v1/auth/login`,{
     method: "POST",
     headers:{"Content-Type": "application/json"},
@@ -51,6 +52,8 @@ if (data.ok){
 
 }catch(error) {
   console.log(error.message)
+  toast (error.message)
+
   setError(error.message || 'Failed to login. Please try again.')
 }finally{
     setIsLoading(false);
@@ -112,7 +115,7 @@ if (data.ok){
               type='button'
               className=' text-white/60 hover:text-white transition-colors inline-flex items-center gap-2'
             >
-              Don't have an account? Sign up
+              Don t have an account? Sign up
               <ArrowRight size={16} />
             </Link>
           </div>

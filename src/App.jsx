@@ -1,23 +1,48 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from "./pages/Login";
-import ErrorAlert from './components/ErrorAlert';
-import Note from './pages/Note';
-import Signup from './pages/Signup';
+import { Toaster } from 'react-hot-toast';
 
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Notes from './pages/Notes';
+import EditNote from './pages/EditNote';
+import NotFound from './pages/NotFound';
+import LogoutButton from './components/LogoutButton';
+
+import AuthGuard from './authGuard/Index';
 
 const App = () => {
   return (
-
-     <Router>
+    <Router>
       <Routes>
-        
-        <Route path="/" element={<Note />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path='/ErrorAlert' element={<ErrorAlert/>}/>
+        <Route path='/' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route
+          path='/notes'
+          element={
+            <AuthGuard>
+              <>
+                <Notes />
+                <LogoutButton />
+              </>
+            </AuthGuard>
+          }
+        />
+        <Route
+          path='/note/:id/edit'
+          element={
+            <AuthGuard>
+              <>
+                <EditNote />
+                <LogoutButton />
+              </>
+            </AuthGuard>
+          }
+        />
+        <Route path='*' element={<NotFound />} />
       </Routes>
-     </Router>
-  )
-}
+      <Toaster />
+    </Router>
+  );
+};
 
-export default App
+export default App;
